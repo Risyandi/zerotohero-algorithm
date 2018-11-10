@@ -7,5 +7,6 @@ function urlSlug(title) {
 
 var winterComing = urlSlug(globalTitle);
 /**
- * return should be "winter-is-coming" slug
- */
+ * code explanation:
+ * this code is return should be "winter-is-coming" slug
+*/
