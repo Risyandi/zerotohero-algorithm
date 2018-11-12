@@ -2,63 +2,41 @@ var words = "Ketua DPP Partai Hanura Inas Nasrullah Zubir mengungkapkan, dalam m
 
 //  token = "",
 // var words = "How are you"; // 11
-// var words_start = 0;
-// var words_end;
 // var words_temp = [''];
 // var temp = "";
-// var num = 0;
-// var indexj = 0;
+
 
 //  ways 1
 //  breaks words into tokenize with define spaces
-for (let index = 0; index < words.length; index++) {
-    // console.log(index, "index");
-    if (words[index] == " ") {
-        words_end = index; 
-        // console.log(words_end, "end search");
-        for (let indexj = words_start; indexj < words_end; indexj++) {
-            temp += words[indexj];
-            words_temp[num] = temp;
+var words_temp = [''],
+    indexj = 0;
+function tokenize(words, delimeter) {
+    for (let index = 0; index < words.length; index++) {
+        // appear indexing
+        console.log(index, "index");
+
+        if (words[index] == delimeter) {
+            // increment indexj
+            indexj++;
+            // appear num indexing num array
+            console.log(indexj, "num indexing array");
+            
+            // push delimeter space as empty to the words_temp[]
+            words_temp[indexj] = "";
+
+            var input_empty = words_temp[indexj] = "";
+            console.log(input_empty, "empty");
+        } else {
+            // join words to the words_temp[]
+            words_temp[indexj] += words[index];
+
+            // result can be ["val", "val", "val"]
+            result = words_temp;
         }
-        words_start = words_end + 1;
-        num = num + 1;
-        console.log(words_start, "start", words_end, "end");
     }
 }
-console.log(words_temp);
-
-
-
-//  ways 1 B
-//  breaks words into tokenize with define spaces
-// var words_temp = [''],
-//     indexj = 0;
-// function tokenize(words, delimeter) {
-//     for (let index = 0; index < words.length; index++) {
-//         // appear indexing
-//         console.log(index, "index");
-
-//         if (words[index] == delimeter) {
-//             indexj++;
-//             // appear num indexing num array
-//             console.log(indexj, "num indexing array");
-            
-//             // push delimeter space as empty to the words_temp[]
-//             words_temp[indexj] = "";
-
-//             var input_empty = words_temp[indexj] = "";
-//             console.log(input_empty, "empty");
-//         } else {
-//             // join words to the words_temp[]
-//             words_temp[indexj] += words[index];
-
-//             // result can be ["val", "val", "val"]
-//             result = words_temp;
-//         }
-//     }
-// }
-// tokenize(words, " ");
-// console.log(result);
+tokenize(words, " ");
+console.log(result);
 
 
 
@@ -123,8 +101,8 @@ console.log(words_temp);
 //         return tokens.map(chars => chars.join(""));
 //     }
 // }
-
 // tokenize(words, " ");
+
 
 /**
  * noted:
