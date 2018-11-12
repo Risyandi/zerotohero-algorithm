@@ -1,21 +1,64 @@
- var words = "aku ada di pulau"; //est length is = 16
-//  var words = "Ketua DPP Partai Hanura Inas Nasrullah Zubir mengungkapkan, dalam mitos Jawa, genderuwo merupakan bangsa jin atau makhluk halus yang berwujud manusia. Genderuwo memiliki tubuh besar dan suka menghisap darah manusia";
- var words_start = 0,
-     temp = [''],
-     token = "";
+var words = "Ketua DPP Partai Hanura Inas Nasrullah Zubir mengungkapkan, dalam mitos Jawa, genderuwo merupakan bangsa jin atau makhluk halus yang berwujud manusia. Genderuwo memiliki tubuh besar dan suka menghisap darah manusia";
+
+//  token = "",
+// var words = "How are you"; // 11
+// var words_start = 0;
+// var words_end;
+// var words_temp = [''];
+// var temp = "";
+// var num = 0;
+// var indexj = 0;
 
 //  ways 1
 //  breaks words into tokenize with define spaces
-// for (let index = 0; index < words.length; index++) {
-//     if (words[index] == " ") {
-//         words_end = index;
-//         for (let indexj = words_start; indexj < words_end; indexj++) {
-//             temp = words[indexj];
-//             console.log(temp);
+for (let index = 0; index < words.length; index++) {
+    // console.log(index, "index");
+    if (words[index] == " ") {
+        words_end = index; 
+        // console.log(words_end, "end search");
+        for (let indexj = words_start; indexj < words_end; indexj++) {
+            temp += words[indexj];
+            words_temp[num] = temp;
+        }
+        words_start = words_end + 1;
+        num = num + 1;
+        console.log(words_start, "start", words_end, "end");
+    }
+}
+console.log(words_temp);
+
+
+
+//  ways 1 B
+//  breaks words into tokenize with define spaces
+// var words_temp = [''],
+//     indexj = 0;
+// function tokenize(words, delimeter) {
+//     for (let index = 0; index < words.length; index++) {
+//         // appear indexing
+//         console.log(index, "index");
+
+//         if (words[index] == delimeter) {
+//             indexj++;
+//             // appear num indexing num array
+//             console.log(indexj, "num indexing array");
+            
+//             // push delimeter space as empty to the words_temp[]
+//             words_temp[indexj] = "";
+
+//             var input_empty = words_temp[indexj] = "";
+//             console.log(input_empty, "empty");
+//         } else {
+//             // join words to the words_temp[]
+//             words_temp[indexj] += words[index];
+
+//             // result can be ["val", "val", "val"]
+//             result = words_temp;
 //         }
-//         words_start = words_end + 1;
 //     }
 // }
+// tokenize(words, " ");
+// console.log(result);
 
 
 
@@ -25,33 +68,39 @@
 // console.log(token, "split");
 // for (let index = 0; index < token.length; index++) {
 //     console.log(token[index] + " - " + "have length = " + token[index].length);
-    // var lengthText = token[index].length;
-    // console.log(lengthText, "hoola");
-    // console.log(token[index], " = words2"); // per words
-    // temp = token[index];
-    // token = temp;
-    // console.log(token, "token");
-    
-    // you can use this loop if you can get string
-    // for (let indexj = words_start; indexj < lengthText; indexj++) {
-        // console.log(token[index][indexj], "words"); // per string
-        // console.log(token[index], "words2"); // per string
-    // }
+//     var lengthText = token[index].length;
+//     console.log(lengthText, "hoola");
+//     console.log(token[index], " = words2"); // per words
+//     temp = token[index];
+//     token = temp;
+//     console.log(token, "token");
+
+//     you can use this loop if you can get string
+//     for (let indexj = words_start; indexj < lengthText; indexj++) {
+//         console.log(token[index][indexj], "words"); // per string
+//         console.log(token[index], "words2"); // per string
+//     }
 // }
 
 
 
 // ways 3
-//  breaks words into tokenize with define spaces
-// function token(sampleInput, delimeter) {
-//     var stringArray = [''];
-//     var j = 0;
-//     for (let index = 0; index < sampleInput.length; index++) {
-//         if (sampleInput.charAt(index) == delimeter) {
+// breaks words into tokenize with define spaces
+// function token(words, delimeter) {
+//     var stringArray = [''],
+//         j = 0;
+//     for (let index = 0; index < words.length; index++) {
+//         // if (words.charAt(index) == delimeter) {
+//         if (words[index] == delimeter) {
+//             // increment of number of stringArray[]
 //             j++;
+//             // push empty to stringArray[]
 //             stringArray.push('');
 //         } else {
-//             stringArray[j] += sampleInput.charAt(index);
+//             // stringArray[j] += words.charAt(index);
+            
+//             // join the text to stringArray[]
+//             stringArray[j] += words[index];
 //         }
 //     }
 //     console.log(stringArray);
@@ -59,6 +108,23 @@
 // }
 // token(words, " ");
 
+
+// ways 4
+// function tokenize(str, delimeter) {
+//     const tokens = [[]];
+//     for (const char of new String(str)) {
+//         if (char === delimeter) {
+//             if (tokens[tokens.length - 1].length > 0) {
+//                 tokens.push([]);
+//             } else {
+//                 tokens[tokens.length - 1].push(char);
+//             }
+//         }
+//         return tokens.map(chars => chars.join(""));
+//     }
+// }
+
+// tokenize(words, " ");
 
 /**
  * noted:
