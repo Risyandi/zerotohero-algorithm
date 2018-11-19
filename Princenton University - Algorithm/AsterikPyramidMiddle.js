@@ -5,7 +5,7 @@ function asterikPyramidMiddle(rows, symbol1, symbol2, symbol3) {
         // (1) this is step one print symbol blank
         var space = "";
         for (let indexj = 0; indexj < (rows - index - 1); indexj++) {
-            // console.log(rows, index, "value-loops-step1");
+            // console.log(index, "value-loops-step1");
             // console.log(indexj, "print-col-step1");
             space += symbol3;
         }
@@ -42,7 +42,7 @@ function asterikPyramidMiddle(rows, symbol1, symbol2, symbol3) {
 }
 
 // call function
-asterikPyramidMiddle(5, "*", "+", " ");
+asterikPyramidMiddle(21, "*", "+", " ");
 
 
 /**
