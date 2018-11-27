@@ -1,30 +1,52 @@
 /**
+ * ---------------------------------
  * ways 1
+ * ---------------------------------
  */
-// Declare a variable for the function reverseTokenize()
+
+// Declare a variable for the function reverse()
 // var words = "how are you";
-// var wordsTemp = [''],
-//     indexj = 0;
+var words = "Ketua DPP Partai Hanura Inas Nasrullah Zubir mengungkapkan, dalam mitos Jawa, genderuwo merupakan bangsa jin atau makhluk halus yang berwujud manusia. Genderuwo memiliki tubuh besar dan suka menghisap darah manusia";
+// var wordsTest = "uoy era woh";
 
-// function ReverseTokenize(words, delimeter) {
-//     console.log(words.length, "words length");
-//     var wordsLength = words.length;
-//     for (let index = wordsLength - 1; index > 0 - 1; index--) {
-//         console.log(index, "index");
-//         console.log(words[index], "val index");
-//         if (words[index] == delimeter) {
-//             // console.log(words[index], "words index"); // just printed a space
-//             indexj++;
-//             wordsTemp[indexj] = "";
-//         } else {
-//             // console.log(indexj, "indexj");
-//             wordsTemp[indexj] += words[index];
-//         }
-//     }
-//     console.log(wordsTemp);
-// }
+// function reverse with decrement 
+function Reverse(words) {
+    var wordsLength = words.length;
+    // console.log(wordsLength, "words length");
+    var reverseWords = "";
+    for (let index = wordsLength - 1; index >= 0; index--) {
+        reverseWords += words[index];
+        // console.log(reverseWords, "words result reverse");
+    }
+    return reverseWords;
+}
 
-// ReverseTokenize(words, " ");
+// function tokenize
+function Tokenize(words, delimeter) {
+    var indexj = 0,
+        wordsTokenize = [""];
+    var wordsReverse = Reverse(words);
+    console.log("\x1b[34m" + "Process 1 Reverse: " + wordsReverse + " [words reverse]");
+    var wordsReverseLength = wordsReverse.length;
+    // console.log(wordsReverseLength, "length words reverse");
+    // var wordsNormal = Reverse(wordsReverse);
+    // console.log(wordsNormal);
+
+    var word = "";
+    for (let index = wordsReverseLength - 1; index >= 0; index--) {
+        word += wordsReverse[index];
+        if (wordsReverse[index] == delimeter) {
+            indexj++;
+            wordsTokenize[indexj] = "";
+        } else {
+            wordsTokenize[indexj] += wordsReverse[index];
+        }
+    }
+    console.log("\x1b[32m" + "Process 2 Normalization: " + word + " [words normal]");
+    console.log(wordsTokenize);
+    return wordsTokenize;
+}
+Tokenize(words, " ");
 
 /**
  * sorting with method in javascript
@@ -36,9 +58,14 @@
  * console.log(num); 
 */
 
+
+
 /**
+ * ---------------------------------
  * ways 2
+ * ---------------------------------
  */
+
 // var arr = ["w","o","h","o","o"];
 // function selectionSort(arr) {
 //     var minIndex, temp,
@@ -67,28 +94,34 @@
 //     console.log(arr);
 //     return arr;
 // }
-
 // selectionSort(arr);
 
 
+
+
 /**
+ * ---------------------------------
  * ways 3
+ * ---------------------------------
  */
 
-var words = "how are you"; 
-function reverse(words) {
-    // console.log(words.split(''));
-    // console.log(words.split('').reverse());
-    // console.log(words.split('').reverse().join(''));
-    return words.split('').reverse().join('');
-}
+// var words = "how are you"; 
+// function reverse(words) {
+//     // console.log(words.split(''));
+//     // console.log(words.split('').reverse());
+//     // console.log(words.split('').reverse().join(''));
+//     return words.split('').reverse().join('');
+// }
 
-function tokenize(words) {
-    const reversed = reverse(words); // 2
-    const normal = reverse(reversed); // 4
-    const result = normal.split(' '); // 3 and 5
-    console.log(result);
-    return result;
-}
-
-tokenize(words);
+// function tokenize(words) {
+//     const reversed = reverse(words); // 2
+//     console.log(reversed, "hasil reserved");
+    
+//     const normal = reverse(reversed); // 4
+//     console.log(normal, "hasil normal");
+    
+//     const result = normal.split(' '); // 3 and 5
+//     console.log(result);
+//     return result;
+// }
+// tokenize(words);
