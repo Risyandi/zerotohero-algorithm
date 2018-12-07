@@ -2,7 +2,7 @@ function convertHTML(str) {
     // split character 
     var temp = str.split('');
     console.log(temp, "result split");
-    
+
     // since we are only checking for a few HTML elements I used a switch
     for (let index = 0; index < temp.length; index++) {
         console.log(temp[index]);

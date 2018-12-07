@@ -1,0 +1,27 @@
+.main-container {
+    margin: auto;
+    display: block;
+}
+
+.container-enc {
+    display: block;
+    margin: auto;
+}
+
+.container-dec {
+    display: block;
+    margin: auto;
+}
+
+.input-form {
+    display: block;
+    margin: auto;
+}
+
+.input-form input {
+    width: 98%;
+}
+
+.text-center {
+    text-align: center;
+}
