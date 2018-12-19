@@ -2,7 +2,7 @@
  * ---------------------------------
  * ways 1
  * ---------------------------------
- */
+*/
 
 // Declare a variable for the function reverse()
 // var words = "how are you";
