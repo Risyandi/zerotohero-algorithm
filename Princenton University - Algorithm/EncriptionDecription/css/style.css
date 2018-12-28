@@ -25,3 +25,7 @@
 .text-center {
     text-align: center;
 }
+
+.child-container {
+    margin: 0 20px 0 20px;
+}
