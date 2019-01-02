@@ -109,8 +109,6 @@ var letter = 'abcdefghijklmnopqrstupwxyz';
 
 
 
-
-
 /**
  * ----------------------
  * ways seconds
@@ -140,6 +138,12 @@ function Encryption(words) {
 }
 Encryption(words);
 
-function Decryption(words) {
 
+var result = Encryption(words);
+function Decrypt(result) {
+    var testSaja = result.replace(/(\d\d-)/g, "");
+    var resultAk = testSaja.replace(/(0)/g, "");
+    console.log(resultAk, "test");
+    return resultAk;
 }
+Decrypt(result);

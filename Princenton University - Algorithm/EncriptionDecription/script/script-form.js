@@ -31,7 +31,8 @@ function encryptionProcess() {
     // set value on input fields
     document.querySelector('#result-enc').value = result;
 }
-    
+
+// listen event click for process encryption
 var elmEnc = document.getElementById("button-encrypt");
 elmEnc.addEventListener("click", encryptionProcess, false);
 
