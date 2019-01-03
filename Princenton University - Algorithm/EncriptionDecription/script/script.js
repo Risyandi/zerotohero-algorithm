@@ -1,5 +1,5 @@
 // declaration a variabel
-var words = "Aku Pergi Ke Sekolah",
+var words = "Aku Pergi Ke Sekolah j",
     // element = " ",
     passUserOne = "server",
     passUserTwo = "server";
