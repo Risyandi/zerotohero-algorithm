@@ -110,21 +110,21 @@ var letter = 'abcdefghijklmnopqrstupwxyz';
 
 
 /**
- * ----------------------
+ * -------------
  * ways seconds
- * ----------------------
+ * -------------
  */
 
 
 function Encryption(words) {
     var lowerWords = words.toLowerCase();
-    // console.log(lowerWords, ": process lowercase");
+    console.log(lowerWords, ": process lowercase");
     var result = "";
     for (let index = 0; index < lowerWords.length; index++) {
         var wordsData = lowerWords[index];
-        // console.log(wordsData, ": words data");
+        console.log(wordsData, ": words data");
         var indexWords = letter.indexOf(wordsData);
-        // console.log(indexWords, ": index words data");
+        console.log(indexWords, ": index words data");
         // if condition meet whitespace
         if (indexWords == -1) {
             // add number 32 on whitespace
@@ -142,8 +142,9 @@ Encryption(words);
 var result = Encryption(words);
 function Decrypt(result) {
     var testSaja = result.replace(/(\d\d-)/g, "");
+        console.log(testSaja, "remove 32-");
     var resultAk = testSaja.replace(/(0)/g, "");
-    console.log(resultAk, "test");
-    return resultAk;
+        console.log(resultAk, "remove 0");
 }
+
 Decrypt(result);
