@@ -1,5 +1,5 @@
 // declaration a variabel
-var words = "Aku Pergi Ke Sekolah j",
+var words = "lorem ipsum",
     // element = " ",
     passUserOne = "server",
     passUserTwo = "server";
@@ -31,7 +31,7 @@ var alphabetNum = {
     "y": 25,
     "z": 26
 }
-var letter = 'abcdefghijklmnopqrstupwxyz';
+var letter = 'abcdefghijklmnopqrstuvwxyz';
 
 /**
  * ----------------------
@@ -130,7 +130,7 @@ function Encryption(words) {
             // add number 32 on whitespace
             result += 32 + "-";
         } else {
-            result += ((indexWords + 1) + "0").toString();
+            result += ((indexWords) + "0").toString();
         }
     }
     console.log(result, ": result words data");
@@ -139,12 +139,20 @@ function Encryption(words) {
 Encryption(words);
 
 
-var result = Encryption(words);
-function Decrypt(result) {
-    var testSaja = result.replace(/(\d\d-)/g, "");
-        console.log(testSaja, "remove 32-");
-    var resultAk = testSaja.replace(/(0)/g, "");
-        console.log(resultAk, "remove 0");
-}
+// var result = Encryption(words);
+// function Decrypt(result) {
+//     var testSaja = result.replace(/(\d\d-)/g, "");
+//         console.log(testSaja, "remove 32-");
+//     var resultAk = testSaja.replace(/(0)/g, "");
+//         console.log(resultAk, "remove 0");
+    //     console.log(resultAk.length, "length resultAK");
+    //     console.log(testSaja.length, "length testSaja");
+    // }   
 
-Decrypt(result);
+// console.log(letter[1], "text of letter");
+// Decrypt(result);
+
+// // convert number to letter using charcode ascii
+// for (let index = 1; index < letter.length + 1; index++) {
+//     console.log(String.fromCharCode(index + 96), "text from ascii");
+// }

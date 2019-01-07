@@ -1,4 +1,4 @@
-var letter = 'abcdefghijklmnopqrstupwxyz';
+var letter = 'abcdefghijklmnopqrstuvwxyz';
 
 // function encryption
 function encryptionProcess(dataTextEnc, dataPassEnc) {
@@ -50,13 +50,26 @@ function decryptionProcess() {
     } else 
     if (dataPassEnc == dataPassDec) {
         alert("password sama!");
-        // call action to decryption text of result encryption
-        // var resultDecr = dataTextEnc.replace(/(\d\d-)/g, "");
-        //     console.log(resultDecr, "remove 32-");
-        // var resultDecrFinal = resultDecr.replace(/(0)/g, "");
-        //     console.log(resultDecrFinal, "remove 0");
-        //     console.log(letter[1], letter[3], "text");
-        // document.querySelector('#result-dec').value = resultFinal;
+        
+        // remove 32-
+        var replaceOne = dataTextEnc.replace(/(\d\d-)/g, "");
+            console.log(replaceOne, "one");
+        // remove duplicate zero number
+        var replaceTwo = replaceOne.replace(/(00)/g, "v-");
+            console.log(replaceTwo, "two");
+        // remove zero number as separate
+        var replaceThree = replaceTwo.replace(/(0)/g, "-");
+            console.log(replaceThree, "three");
+        // remove symbol v as zero number
+        var resultDecrFinal = replaceThree.replace(/(v)/g, "0");
+            console.log(resultDecrFinal, "final");
+
+        var finishResult = resultDecrFinal.replace(/([\d]{1,2})([^\d]|$)/g, function (match, p1, p2) {
+            return letter[Number(p1) - 1] + (p2 == "-" ? "" : p2);
+        });
+
+        // document.querySelector('#result-dec').value = resultDecrFinal;
+        document.querySelector('#result-dec').value = finishResult;
     }
 
 }
