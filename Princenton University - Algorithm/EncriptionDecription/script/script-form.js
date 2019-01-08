@@ -78,7 +78,7 @@ function decryptionProcess() {
 function emptyFieldEncrypt() {
     var a = document.querySelector('#words-text-enc').value;
     var b = document.querySelector('#password-enc').value;
-    if (a==null || a=="", b==null || b=="") {
+    if (a == null || a == "", b == null || b == "") {
         alert('Please field your form encryption');
     }
 }
@@ -86,17 +86,17 @@ function emptyFieldEncrypt() {
 function emptyFieldDecrypt() {
     var c = document.querySelector('#words-text-dec').value;
     var d = document.querySelector('#password-dec').value;
-    if (c==null || c=="", d==null || d=="") {
+    if (c == null || c == "", d == null || d == "") {
         alert('Please field your form decryption');
     }
 }
 
 // listen event click for process encryption
 var elmEnc = document.getElementById("button-encrypt");
-    elmEnc.addEventListener("click", encryptionProcess, false);
-    elmEnc.addEventListener("click", emptyFieldEncrypt, false);
+elmEnc.addEventListener("click", encryptionProcess, false);
+elmEnc.addEventListener("click", emptyFieldEncrypt, false);
 
 // listen event click for process decryption
 var elmDec = document.getElementById("button-decrypt");
-    elmDec.addEventListener("click", decryptionProcess, false);
-    elmDec.addEventListener("click", emptyFieldDecrypt, false);
+elmDec.addEventListener("click", decryptionProcess, false);
+elmDec.addEventListener("click", emptyFieldDecrypt, false);
