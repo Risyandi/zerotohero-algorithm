@@ -1,8 +1,10 @@
 function truthCheck(collection, pre) {
     // create a counter to check how many are true
     var counter = 0;
+    
     // check foreach object
     for (var c in collection) {
+        console.log(collection[c], "value collection");
         // if it is has property and value is truthy
         if (collection[c].hasOwnProperty(pre) && Boolean(collection[c][pre])) {
             counter++;
